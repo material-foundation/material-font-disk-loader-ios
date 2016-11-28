@@ -27,11 +27,6 @@ NSString *const CustomFontRegularFontFilename = @"Roboto-Regular.ttf";
 
 @implementation FontDiskLoaderSimpleExample
 
-// TODO: Support other categorizational methods.
-+ (NSArray *)catalogBreadcrumbs {
-  return @[ @"Typography and Fonts", @"Font Disk Loader" ];
-}
-
 - (void)viewDidLoad {
   [super viewDidLoad];
 
@@ -59,6 +54,10 @@ NSString *const CustomFontRegularFontFilename = @"Roboto-Regular.ttf";
   [self.view addSubview:label];
 }
 
-#pragma mark - Private
+#pragma mark - Supplemental
+
++ (NSArray *)catalogBreadcrumbs {
+  return @[ @"Font Disk Loader" ];
+}
 
 @end
