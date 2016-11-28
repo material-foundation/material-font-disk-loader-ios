@@ -1,16 +1,24 @@
 PODS:
-  - MaterialComponentsFontDiskLoader (1.0.0)
+  - CatalogByConvention (2.0.0)
+  - MaterialComponentsFontDiskLoader/examples (1.0.0):
+    - MaterialComponentsFontDiskLoader/lib
+  - MaterialComponentsFontDiskLoader/lib (1.0.0)
+  - MaterialComponentsFontDiskLoader/tests (1.0.0):
+    - MaterialComponentsFontDiskLoader/lib
 
 DEPENDENCIES:
-  - MaterialComponentsFontDiskLoader (from `./`)
+  - CatalogByConvention
+  - MaterialComponentsFontDiskLoader/examples (from `./`)
+  - MaterialComponentsFontDiskLoader/tests (from `./`)
 
 EXTERNAL SOURCES:
   MaterialComponentsFontDiskLoader:
     :path: "./"
 
 SPEC CHECKSUMS:
-  MaterialComponentsFontDiskLoader: ff5319d707572eb07fe16b124f389bf66c496611
+  CatalogByConvention: be55c2263132e4f9f59299ac8a528ee8715b3275
+  MaterialComponentsFontDiskLoader: f2d2d836115531b073f98669a887bdd183b87afe
 
-PODFILE CHECKSUM: cf1dce006018b09d893582edfa5ade8b83149a46
+PODFILE CHECKSUM: 649627e6ec178f12839ad4263c7173050ff14135
 
 COCOAPODS: 1.0.1
