@@ -1,5 +1,5 @@
 <!--{% if site.link_to_site == "true" %}-->
-See <a href="https://material-ext.appspot.com/mdc-ios-preview/components/FontDiskLoader/">MDC site documentation</a> for richer experience.
+See <a href="https://material-ext.appspot.com/mdc-ios-preview/components/FontDiskLoader/">MDF site documentation</a> for richer experience.
 <!--{% else %}See <a href="https://github.com/material-components/material-components-ios/tree/develop/components/FontDiskLoader">GitHub</a> for README documentation.{% endif %}-->
 
 #FontDiskLoader
@@ -21,8 +21,8 @@ Registers a single custom font asset from disk
 
 <ul class="icon-list">
   <li class="icon-link">
-    <a href="https://material-ext.appspot.com/mdc-ios-preview/components/FontDiskLoader/apidocs/Classes/MDCFontDiskLoader.html">
-      MDCFontDiskLoader
+    <a href="https://material-ext.appspot.com/mdc-ios-preview/components/FontDiskLoader/apidocs/Classes/MDFFontDiskLoader.html">
+      MDFFontDiskLoader
     </a>
   </li>
 </ul>
@@ -82,14 +82,14 @@ font.
 <!--<div class="material-code-render" markdown="1">-->
 #### Objective-C
 ~~~ objc
-  MDCFontDiskLoader *fontDiskLoader =
-      [[MDCFontDiskLoader alloc] initWithFontName:nameOfFontInFile URL:fontURLOnDisk];
+  MDFFontDiskLoader *fontDiskLoader =
+      [[MDFFontDiskLoader alloc] initWithFontName:nameOfFontInFile URL:fontURLOnDisk];
   UIFont *font = [fontDiskLoader fontOfSize:16];
 ~~~
 
 #### Swift
 ~~~ swift
-    let fontLoader = MDCFontDiskLoader.init(fontName: nameOfFontInFile, fontURL: fontURLOnDisk);
+    let fontLoader = MDFFontDiskLoader.init(fontName: nameOfFontInFile, fontURL: fontURLOnDisk);
     let myFont:UIFont = fontLoader.fontOfSize(16)!;
 ~~~
 <!--</div>-->

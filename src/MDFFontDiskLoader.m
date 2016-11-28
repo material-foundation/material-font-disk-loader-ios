@@ -14,11 +14,11 @@
  limitations under the License.
  */
 
-#import "MDCFontDiskLoader.h"
+#import "MDFFontDiskLoader.h"
 
 #import <CoreText/CoreText.h>
 
-@interface MDCFontDiskLoader ()
+@interface MDFFontDiskLoader ()
 @property(nonatomic) BOOL disableSanityChecks;  // For tests to turn off asserts
 @end
 
@@ -55,7 +55,7 @@ static dispatch_queue_t gLoadedFontsQueue;
  average 1.3 ms. This is unacceptable in situations in which you may want to display more than 20
  different labels as is the case for a scrolling collection view because it would cause frame drops.
  */
-@implementation MDCFontDiskLoader
+@implementation MDFFontDiskLoader
 
 @synthesize loadFailed = _loadFailed;
 
@@ -64,7 +64,7 @@ static dispatch_queue_t gLoadedFontsQueue;
   dispatch_once(&once, ^{
     gLoadedFonts = [[NSMutableSet alloc] init];
     gLoadedFontsQueue =
-        dispatch_queue_create("com.google.mdc.FontDiskLoaderQueue", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_create("com.google.MDF.FontDiskLoaderQueue", DISPATCH_QUEUE_SERIAL);
   });
 }
 
@@ -142,7 +142,7 @@ static dispatch_queue_t gLoadedFontsQueue;
   if (!object || ![object isKindOfClass:[self class]]) {
     return NO;
   }
-  MDCFontDiskLoader *otherObject = (MDCFontDiskLoader *)object;
+  MDFFontDiskLoader *otherObject = (MDFFontDiskLoader *)object;
   BOOL fontNamesAreEqual = [otherObject.fontName isEqualToString:_fontName];
   return fontNamesAreEqual && [otherObject.fontURL isEqual:_fontURL];
 }
@@ -159,7 +159,7 @@ static dispatch_queue_t gLoadedFontsQueue;
 
 - (BOOL)load {
   @synchronized(self) {
-    BOOL loaded = [MDCFontDiskLoader isFontURLLoaded:_fontURL];
+    BOOL loaded = [MDFFontDiskLoader isFontURLLoaded:_fontURL];
     if (loaded) {
       return YES;
     }
@@ -184,14 +184,14 @@ static dispatch_queue_t gLoadedFontsQueue;
     if (error) {
       CFRelease(error);
     }
-    [MDCFontDiskLoader setFontURL:_fontURL loaded:loaded];
+    [MDFFontDiskLoader setFontURL:_fontURL loaded:loaded];
     return loaded;
   }
 }
 
 - (BOOL)unload {
   @synchronized(self) {
-    BOOL loaded = [MDCFontDiskLoader isFontURLLoaded:_fontURL];
+    BOOL loaded = [MDFFontDiskLoader isFontURLLoaded:_fontURL];
     _loadFailed = NO;
     if (!loaded) {
       return YES;
@@ -203,7 +203,7 @@ static dispatch_queue_t gLoadedFontsQueue;
     if (loaded || error) {
       NSLog(@"Failed to unload font: %@", error);
     }
-    [MDCFontDiskLoader setFontURL:_fontURL loaded:loaded];
+    [MDFFontDiskLoader setFontURL:_fontURL loaded:loaded];
     return !loaded;
   }
 }
@@ -217,7 +217,7 @@ static dispatch_queue_t gLoadedFontsQueue;
 }
 
 - (BOOL)isLoaded {
-  return [MDCFontDiskLoader isFontURLLoaded:_fontURL];
+  return [MDFFontDiskLoader isFontURLLoaded:_fontURL];
 }
 
 - (BOOL)hasLoadFailed {

@@ -39,8 +39,8 @@ NSString *const CustomFontRegularFontFilename = @"Roboto-Regular.ttf";
   // sizes. See https://github.com/material-components/material-components-ios/tree/develop/components/Typography
 
   NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-  MDCFontDiskLoader *fontDiskLoader =
-      [[MDCFontDiskLoader alloc] initWithFontName:CustomFontRegularFontName
+  MDFFontDiskLoader *fontDiskLoader =
+      [[MDFFontDiskLoader alloc] initWithFontName:CustomFontRegularFontName
                                          filename:CustomFontRegularFontFilename
                                    bundleFileName:CustomFontBundle
                                        baseBundle:bundle];

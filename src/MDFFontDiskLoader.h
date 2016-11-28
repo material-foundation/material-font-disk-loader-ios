@@ -20,15 +20,15 @@
  This class loads and registers a custom font by file url.
 
  This class provides a convenience layer on top of CoreText APIs. Registration occurs by @c fileURL,
- therefore registration state is shared across all instances of MDCFontDiskLoader objects. For
- example if two MDCFontDiskLoader objects have the same fileURL, calling @c load one will also
- alter the state of the second MDCFontDiskLoader object. The same holds true for @c unload.
+ therefore registration state is shared across all instances of MDFFontDiskLoader objects. For
+ example if two MDFFontDiskLoader objects have the same fileURL, calling @c load one will also
+ alter the state of the second MDFFontDiskLoader object. The same holds true for @c unload.
  This class is thread safe and can be called from any thread.
  */
-@interface MDCFontDiskLoader : NSObject <NSCopying>
+@interface MDFFontDiskLoader : NSObject <NSCopying>
 
 /**
- Designated initializer for the MDCFontDiskLoader.
+ Designated initializer for the MDFFontDiskLoader.
 
  @param fontName The font's name as it is defined in the resource file.
  @param fontURL The url location of the font on the file system.
@@ -37,7 +37,7 @@
                                  fontURL:(nonnull NSURL *)fontURL NS_DESIGNATED_INITIALIZER;
 
 /**
- Convenience initializer for the MDCFontDiskLoader.
+ Convenience initializer for the MDFFontDiskLoader.
 
  @param fontName The font's name as it is defined in the ttf file.
  @param filename The name of the font file. For example a *.ttf file.
@@ -64,7 +64,7 @@
 /**
  The loaded state of the custom font.
 
- All instances of MDCFontDiskLoader with the same fontURL have the same value of @c loaded.
+ All instances of MDFFontDiskLoader with the same fontURL have the same value of @c loaded.
  */
 @property(nonatomic, readonly, getter=isLoaded) BOOL loaded;
 
@@ -78,7 +78,7 @@
 /**
  Attempts to load the font.
 
- All instances of MDCFontDiskLoader with the same fontURL will reflect changes from this method.
+ All instances of MDFFontDiskLoader with the same fontURL will reflect changes from this method.
 
  The @c loaded and @c loadFailed flags reflect the results of this registration
  attempt. Returns true if the font is loaded. If font registration fails, subsequent calls to
@@ -89,7 +89,7 @@
 /**
  Attempts to unload the font.
 
- All instances of MDCFontDiskLoader with the same fontURL will reflect changes from this method.
+ All instances of MDFFontDiskLoader with the same fontURL will reflect changes from this method.
 
  Returns true when the font is unloaded. Resets @c loadFailed back to false.
  */

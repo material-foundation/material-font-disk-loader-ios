@@ -16,15 +16,15 @@
 
 #import <XCTest/XCTest.h>
 
-#import "MDCFontDiskLoader.h"
+#import "MDFFontDiskLoader.h"
 
 static const CGFloat kEpsilonAccuracy = 0.001f;
 
-// We use the bundle from MDCRobotoFontLoader to test loading functionality
-static NSString *MDCRobotoFontLoaderClassname = @"MDCRobotoFontLoader";
-static NSString *MDCRobotoRegularFontName = @"Roboto-Regular";
-static NSString *MDCRobotoRegularFontFilename = @"Roboto-Regular.ttf";
-static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
+// We use the bundle from MDFRobotoFontLoader to test loading functionality
+static NSString *MDFRobotoFontLoaderClassname = @"MDFRobotoFontLoader";
+static NSString *MDFRobotoRegularFontName = @"Roboto-Regular";
+static NSString *MDFRobotoRegularFontFilename = @"Roboto-Regular.ttf";
+static NSString *MDFRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 /**
  For our tests we are following a Given When Then structure as defined in
@@ -40,7 +40,7 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
  For us this just means that we have the Given When Then guide posts as comments for each unit test.
  */
 
-@interface MDCFontDiskLoader (Testing)
+@interface MDFFontDiskLoader (Testing)
 @property(nonatomic, assign) BOOL disableSanityChecks;
 @end
 
@@ -49,18 +49,18 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 @implementation FontDiskLoaderTests
 
-- (MDCFontDiskLoader *)validFontLoader {
-  NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(MDCRobotoFontLoaderClassname)];
-  return [[MDCFontDiskLoader alloc] initWithFontName:MDCRobotoRegularFontName
-                                            filename:MDCRobotoRegularFontFilename
-                                      bundleFileName:MDCRobotoBundle
+- (MDFFontDiskLoader *)validFontLoader {
+  NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(MDFRobotoFontLoaderClassname)];
+  return [[MDFFontDiskLoader alloc] initWithFontName:MDFRobotoRegularFontName
+                                            filename:MDFRobotoRegularFontFilename
+                                      bundleFileName:MDFRobotoBundle
                                           baseBundle:bundle];
 }
 
-- (MDCFontDiskLoader *)invalidFontLoader {
-  NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(MDCRobotoFontLoaderClassname)];
+- (MDFFontDiskLoader *)invalidFontLoader {
+  NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(MDFRobotoFontLoaderClassname)];
   // This attempts to use a png asset instead of a valid font file.
-  return [[MDCFontDiskLoader alloc] initWithFontName:@"some invalid font name"
+  return [[MDFFontDiskLoader alloc] initWithFontName:@"some invalid font name"
                                             filename:@"ic_arrow_back.png"
                                       bundleFileName:@"MaterialIcons_ic_arrow_back.bundle"
                                           baseBundle:bundle];
@@ -68,19 +68,19 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testConvenienceInitCreatesAFontURL {
   // Given
-  MDCFontDiskLoader *loader = [self validFontLoader];
+  MDFFontDiskLoader *loader = [self validFontLoader];
 
   // Then
   XCTAssertNotNil(loader.fontURL, @"The font URL must not be nil when using the convenience init.");
-  XCTAssertTrue([[loader.fontURL path] containsString:MDCRobotoRegularFontFilename],
-                @"The font URL's path must contain %@", MDCRobotoRegularFontFilename);
-  XCTAssertTrue([[loader.fontURL path] containsString:MDCRobotoBundle],
-                @"The font URL's path must contain %@", MDCRobotoBundle);
+  XCTAssertTrue([[loader.fontURL path] containsString:MDFRobotoRegularFontFilename],
+                @"The font URL's path must contain %@", MDFRobotoRegularFontFilename);
+  XCTAssertTrue([[loader.fontURL path] containsString:MDFRobotoBundle],
+                @"The font URL's path must contain %@", MDFRobotoBundle);
 }
 
 - (void)testload {
   // Given
-  MDCFontDiskLoader *loader = [self validFontLoader];
+  MDFFontDiskLoader *loader = [self validFontLoader];
 
   // When
   [loader load];
@@ -91,7 +91,7 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testUnload {
   // Given
-  MDCFontDiskLoader *loader = [self validFontLoader];
+  MDFFontDiskLoader *loader = [self validFontLoader];
   [loader load];
   XCTAssertTrue(loader.loaded, @"Loading a valid font must mark its state loaded.");
 
@@ -105,7 +105,7 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testUnloadFailedRegistration {
   // Given
-  MDCFontDiskLoader *loader = [self invalidFontLoader];
+  MDFFontDiskLoader *loader = [self invalidFontLoader];
   [loader load];
 
   // When
@@ -120,7 +120,7 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testUnloadNotloaded {
   // Given
-  MDCFontDiskLoader *loader = [self invalidFontLoader];
+  MDFFontDiskLoader *loader = [self invalidFontLoader];
 
   // When
   [loader unload];
@@ -133,7 +133,7 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testloadFailure {
   // Given
-  MDCFontDiskLoader *loader = [self invalidFontLoader];
+  MDFFontDiskLoader *loader = [self invalidFontLoader];
   loader.disableSanityChecks = YES;
 
   // When
@@ -148,10 +148,10 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testCopy {
   // Given
-  MDCFontDiskLoader *loader = [self validFontLoader];
+  MDFFontDiskLoader *loader = [self validFontLoader];
 
   // When
-  MDCFontDiskLoader *secondFontLoader = [loader copy];
+  MDFFontDiskLoader *secondFontLoader = [loader copy];
 
   // Then
   XCTAssertEqualObjects(secondFontLoader, loader,
@@ -160,9 +160,9 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testloadedOfSecondFontLoader {
   // Given
-  MDCFontDiskLoader *loader = [self validFontLoader];
-  MDCFontDiskLoader *secondFontLoader =
-      [[MDCFontDiskLoader alloc] initWithFontName:loader.fontName fontURL:loader.fontURL];
+  MDFFontDiskLoader *loader = [self validFontLoader];
+  MDFFontDiskLoader *secondFontLoader =
+      [[MDFFontDiskLoader alloc] initWithFontName:loader.fontName fontURL:loader.fontURL];
 
   // When
   [loader load];
@@ -175,7 +175,7 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testProvidesACustomFont {
   // Given
-  MDCFontDiskLoader *loader = [self validFontLoader];
+  MDFFontDiskLoader *loader = [self validFontLoader];
   CGFloat randomSize = arc4random() * 100 / CGFLOAT_MAX;
 
   // When
@@ -186,13 +186,13 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
                         @"font.");
   XCTAssertEqualWithAccuracy(font.pointSize, randomSize, kEpsilonAccuracy,
                              @"The font size of the font returned from fontOfSize: must match ");
-  XCTAssertEqualObjects(font.fontName, MDCRobotoRegularFontName);
+  XCTAssertEqualObjects(font.fontName, MDFRobotoRegularFontName);
 }
 
 - (void)testReturnNilWhenTheCustomFontCanNotBeFound {
   // Given
-  MDCFontDiskLoader *validLoader = [self validFontLoader];
-  MDCFontDiskLoader *loader = [[MDCFontDiskLoader alloc] initWithFontName:@"some invalid font name"
+  MDFFontDiskLoader *validLoader = [self validFontLoader];
+  MDFFontDiskLoader *loader = [[MDFFontDiskLoader alloc] initWithFontName:@"some invalid font name"
                                                                   fontURL:validLoader.fontURL];
   loader.disableSanityChecks = YES;
   CGFloat randomSize = arc4random() * 100 / CGFLOAT_MAX;
@@ -206,7 +206,7 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testDescriptionNotloaded {
   // Given
-  MDCFontDiskLoader *loader = [self validFontLoader];
+  MDFFontDiskLoader *loader = [self validFontLoader];
   [loader unload];
   NSString *expected =
       [NSString stringWithFormat:@"font name: %@; font url: %@;", loader.fontName, loader.fontURL];
@@ -222,7 +222,7 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testDescriptionloaded {
   // Given
-  MDCFontDiskLoader *loader = [self validFontLoader];
+  MDFFontDiskLoader *loader = [self validFontLoader];
   [loader load];
   NSString *expected = [NSString stringWithFormat:@"font name: %@; loaded = YES; font url: %@;",
                                                   loader.fontName, loader.fontURL];
@@ -240,7 +240,7 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 
 - (void)testDescriptionFailedRegistration {
   // Given
-  MDCFontDiskLoader *loader = [self invalidFontLoader];
+  MDFFontDiskLoader *loader = [self invalidFontLoader];
   [loader load];
   NSString *expected = [NSString stringWithFormat:@"font name: %@; failed registration = YES; "
                                                   @"font url: %@;",
@@ -263,11 +263,11 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
   NSString *otherName = @"some other name";
   NSURL *url = [NSURL fileURLWithPath:@"some url string"];
   NSURL *otherUrl = [NSURL fileURLWithPath:@"some other url string"];
-  MDCFontDiskLoader *loader = [[MDCFontDiskLoader alloc] initWithFontName:name fontURL:url];
-  MDCFontDiskLoader *secondLoader =
-      [[MDCFontDiskLoader alloc] initWithFontName:otherName fontURL:url];
-  MDCFontDiskLoader *thirdLoader =
-      [[MDCFontDiskLoader alloc] initWithFontName:name fontURL:otherUrl];
+  MDFFontDiskLoader *loader = [[MDFFontDiskLoader alloc] initWithFontName:name fontURL:url];
+  MDFFontDiskLoader *secondLoader =
+      [[MDFFontDiskLoader alloc] initWithFontName:otherName fontURL:url];
+  MDFFontDiskLoader *thirdLoader =
+      [[MDFFontDiskLoader alloc] initWithFontName:name fontURL:otherUrl];
   NSObject *object = [[NSObject alloc] init];
 
   // Then
@@ -294,9 +294,9 @@ static NSString *MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
 - (void)testEquals {
   // Given
   NSURL *url = [NSURL fileURLWithPath:@"some url string"];
-  MDCFontDiskLoader *loader = [[MDCFontDiskLoader alloc] initWithFontName:@"some name" fontURL:url];
-  MDCFontDiskLoader *secondLoader =
-      [[MDCFontDiskLoader alloc] initWithFontName:@"some name" fontURL:url];
+  MDFFontDiskLoader *loader = [[MDFFontDiskLoader alloc] initWithFontName:@"some name" fontURL:url];
+  MDFFontDiskLoader *secondLoader =
+      [[MDFFontDiskLoader alloc] initWithFontName:@"some name" fontURL:url];
 
   // Then
   XCTAssertEqualObjects(loader, secondLoader,
