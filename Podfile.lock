@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  MaterialComponentsFontDiskLoader: 0d6fd6ea517d8ec727e24279f4bd8a571db8f97a
+  MaterialComponentsFontDiskLoader: ff5319d707572eb07fe16b124f389bf66c496611
 
-PODFILE CHECKSUM: 507741783a098672bf5e1d02cc06ceb0afdde288
+PODFILE CHECKSUM: cf1dce006018b09d893582edfa5ade8b83149a46
 
 COCOAPODS: 1.0.1
