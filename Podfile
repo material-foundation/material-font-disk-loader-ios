@@ -1,7 +1,7 @@
-abstract_target 'MaterialMotionFontDiskLoader' do
-  pod 'MaterialMotionFontDiskLoader', :path => './'
+abstract_target 'MaterialComponentsFontDiskLoader' do
+  pod 'MaterialComponentsFontDiskLoader', :path => './'
 
-  workspace 'MaterialMotionFontDiskLoader.xcworkspace'
+  workspace 'MaterialComponentsFontDiskLoader.xcworkspace'
   use_frameworks!
 
   target "Catalog" do

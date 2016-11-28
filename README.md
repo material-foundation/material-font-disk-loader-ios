@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/material-foundation/material-font-disk-loader-ios.svg?branch=develop)](https://travis-ci.org/material-foundation/material-font-disk-loader-ios)
 [![codecov](https://codecov.io/gh/material-foundation/material-font-disk-loader-ios/branch/develop/graph/badge.svg)](https://codecov.io/gh/material-foundation/material-font-disk-loader-ios)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/MaterialMotionFontDiskLoader.svg)](https://cocoapods.org/pods/MaterialMotionFontDiskLoader)
-[![Platform](https://img.shields.io/cocoapods/p/MaterialMotionFontDiskLoader.svg)](http://cocoadocs.org/docsets/MaterialMotionFontDiskLoader)
-[![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/MaterialMotionFontDiskLoader.svg)](http://cocoadocs.org/docsets/MaterialMotionFontDiskLoader)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/MaterialComponentsFontDiskLoader.svg)](https://cocoapods.org/pods/MaterialComponentsFontDiskLoader)
+[![Platform](https://img.shields.io/cocoapods/p/MaterialComponentsFontDiskLoader.svg)](http://cocoadocs.org/docsets/MaterialComponentsFontDiskLoader)
+[![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/MaterialComponentsFontDiskLoader.svg)](http://cocoadocs.org/docsets/MaterialComponentsFontDiskLoader)
 
 ## Installation
 
@@ -17,9 +17,9 @@
 >
 >     gem install cocoapods
 
-Add `MaterialMotionFontDiskLoader` to your `Podfile`:
+Add `MaterialComponentsFontDiskLoader` to your `Podfile`:
 
-    pod 'MaterialMotionFontDiskLoader'
+    pod 'MaterialComponentsFontDiskLoader'
 
 Then run the following command:
 
@@ -29,7 +29,7 @@ Then run the following command:
 
 Import the framework:
 
-    @import MaterialMotionFontDiskLoader;
+    @import MaterialComponentsFontDiskLoader;
 
 You will now have access to all of the APIs.
 
@@ -41,7 +41,7 @@ commands:
     git clone https://github.com/material-foundation/material-font-disk-loader-ios.git
     cd material-font-disk-loader-ios
     pod install
-    open MaterialMotionFontDiskLoader.xcworkspace
+    open MaterialComponentsFontDiskLoader.xcworkspace
 
 ## Guides
 
@@ -58,9 +58,9 @@ We welcome contributions!
 
 Check out our [upcoming milestones](https://github.com/material-foundation/material-font-disk-loader-ios/milestones).
 
-Learn more about [our team](https://material-motion.github.io/material-motion/team/),
-[our community](https://material-motion.github.io/material-motion/team/community/), and
-our [contributor essentials](https://material-motion.github.io/material-motion/team/essentials/).
+Learn more about [our team](https://material-Components.github.io/material-Components/team/),
+[our community](https://material-Components.github.io/material-Components/team/community/), and
+our [contributor essentials](https://material-Components.github.io/material-Components/team/essentials/).
 
 ## License
 

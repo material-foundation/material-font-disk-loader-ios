@@ -1,6 +1,6 @@
-module: MaterialMotionFontDiskLoader
+module: MaterialComponentsFontDiskLoader
 module_version: 1.0.0
-umbrella_header: src/MaterialMotionFontDiskLoader.h
+umbrella_header: src/MaterialComponentsFontDiskLoader.h
 objc: true
 sdk: iphonesimulator
 github_url: https://github.com/material-foundation/material-font-disk-loader-ios
