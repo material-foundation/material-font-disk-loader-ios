@@ -13,7 +13,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-
+import CatalogByConvention
 import UIKit
 
 @UIApplicationMain
@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     let window = UIWindow(frame: UIScreen.main.bounds)
     self.window = window
-    window.rootViewController = UINavigationController(rootViewController: UIViewController())
+
+    let rootViewController = CBCNodeListViewController(node: CBCCreateNavigationTree())
+    window.rootViewController = UINavigationController(rootViewController: rootViewController)
     window.makeKeyAndVisible()
     return true
   }
