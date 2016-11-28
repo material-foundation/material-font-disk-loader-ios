@@ -1,0 +1,16 @@
+PODS:
+  - MaterialMotionFontDiskLoader (1.0.0)
+
+DEPENDENCIES:
+  - MaterialMotionFontDiskLoader (from `./`)
+
+EXTERNAL SOURCES:
+  MaterialMotionFontDiskLoader:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  MaterialMotionFontDiskLoader: 0d6fd6ea517d8ec727e24279f4bd8a571db8f97a
+
+PODFILE CHECKSUM: 507741783a098672bf5e1d02cc06ceb0afdde288
+
+COCOAPODS: 1.0.1
