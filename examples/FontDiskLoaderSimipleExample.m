@@ -17,10 +17,10 @@
 #import <UIKit/UIKit.h>
 
 #import "MaterialFontDiskLoader.h"
-#import "MaterialRobotoFontLoader.h"
-// TODO(iangordon): Re-add 'private/' to the path below once our Podspec specfically defines our
-// header search paths instead of flattening our header files into a single directory.
-#import "MDCRoboto+Constants.h"
+
+NSString *const MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
+NSString *const MDCRobotoRegularFontName = @"Roboto-Regular";
+NSString *const MDCRobotoRegularFontFilename = @"Roboto-Regular.ttf";
 
 @interface FontDiskLoaderSimpleExample : UIViewController
 @end
@@ -43,7 +43,7 @@
   // Consider using the named styles provided by the Typography component instead of specific font
   // sizes. See https://github.com/material-components/material-components-ios/tree/develop/components/Typography
 
-  NSBundle *bundle = [NSBundle bundleForClass:[MDCRobotoFontLoader class]];
+  NSBundle *bundle = [NSBundle bundleForClass:[self class]];
   MDCFontDiskLoader *fontDiskLoader =
       [[MDCFontDiskLoader alloc] initWithFontName:MDCRobotoRegularFontName
                                          filename:MDCRobotoRegularFontFilename

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec "examples" do |ss|
-    ss.source_files = "examples/*.{swift}", "examples/supplemental/*.{swift}"
+    ss.source_files = "examples/*.{swift,m,h}", "examples/supplemental/*.{swift,m,h}"
     ss.exclude_files = "examples/TableOfContents.swift"
     ss.resources = "examples/supplemental/*.{xcassets}"
     ss.dependency "MaterialComponentsFontDiskLoader/lib"
