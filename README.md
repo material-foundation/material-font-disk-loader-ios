@@ -1,7 +1,3 @@
-<!--{% if site.link_to_site == "true" %}-->
-See <a href="https://material-ext.appspot.com/mdc-ios-preview/components/FontDiskLoader/">MDF site documentation</a> for richer experience.
-<!--{% else %}See <a href="https://github.com/material-components/material-components-ios/tree/develop/components/FontDiskLoader">GitHub</a> for README documentation.{% endif %}-->
-
 #FontDiskLoader
 
 Registers a single custom font asset from disk
@@ -13,16 +9,6 @@ Registers a single custom font asset from disk
   <li class="icon-link">
     <a href="https://www.google.com/design/spec/typography.html">
       Typography
-    </a>
-  </li>
-</ul>
-
-### API Documentation
-
-<ul class="icon-list">
-  <li class="icon-link">
-    <a href="https://material-ext.appspot.com/mdc-ios-preview/components/FontDiskLoader/apidocs/Classes/MDFFontDiskLoader.html">
-      MDFFontDiskLoader
     </a>
   </li>
 </ul>
@@ -44,7 +30,7 @@ Font Disk Loader lazily registers your custom fonts.
 To add this component to your Xcode project using CocoaPods, add the following to your `Podfile`:
 
 ~~~
-pod 'MaterialComponents/FontDiskLoader'
+pod 'MDFFontDiskLoader'
 ~~~
 
 Then, run the following command:
