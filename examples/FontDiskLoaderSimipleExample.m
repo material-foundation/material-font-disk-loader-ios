@@ -18,9 +18,9 @@
 
 #import "MaterialFontDiskLoader.h"
 
-NSString *const MDCRobotoBundle = @"MaterialRobotoFontLoader.bundle";
-NSString *const MDCRobotoRegularFontName = @"Roboto-Regular";
-NSString *const MDCRobotoRegularFontFilename = @"Roboto-Regular.ttf";
+NSString *const CustomFontBundle = @"CustomFont.bundle";
+NSString *const CustomFontRegularFontName = @"Roboto-Regular";
+NSString *const CustomFontRegularFontFilename = @"Roboto-Regular.ttf";
 
 @interface FontDiskLoaderSimpleExample : UIViewController
 @end
@@ -45,9 +45,9 @@ NSString *const MDCRobotoRegularFontFilename = @"Roboto-Regular.ttf";
 
   NSBundle *bundle = [NSBundle bundleForClass:[self class]];
   MDCFontDiskLoader *fontDiskLoader =
-      [[MDCFontDiskLoader alloc] initWithFontName:MDCRobotoRegularFontName
-                                         filename:MDCRobotoRegularFontFilename
-                                   bundleFileName:MDCRobotoBundle
+      [[MDCFontDiskLoader alloc] initWithFontName:CustomFontRegularFontName
+                                         filename:CustomFontRegularFontFilename
+                                   bundleFileName:CustomFontBundle
                                        baseBundle:bundle];
 
   UILabel *label = [[UILabel alloc] init];
