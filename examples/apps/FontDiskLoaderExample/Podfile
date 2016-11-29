@@ -1,0 +1,5 @@
+use_frameworks!
+
+target "FontDiskLoaderExample" do
+  pod 'MaterialComponentsFontDiskLoader', :path => '../../../'
+end

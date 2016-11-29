@@ -1,0 +1,16 @@
+PODS:
+  - MaterialComponentsFontDiskLoader (1.0.0)
+
+DEPENDENCIES:
+  - MaterialComponentsFontDiskLoader (from `../../../`)
+
+EXTERNAL SOURCES:
+  MaterialComponentsFontDiskLoader:
+    :path: "../../../"
+
+SPEC CHECKSUMS:
+  MaterialComponentsFontDiskLoader: a5502890fe75ef8b640aecaa138e98aadfba0476
+
+PODFILE CHECKSUM: c4a5b95597fb96d43549a81cad5e8cb398950bc4
+
+COCOAPODS: 1.0.1
