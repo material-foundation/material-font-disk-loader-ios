@@ -13,9 +13,10 @@
 		2011CC041DEDF9720047F8B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2011CC021DEDF9720047F8B5 /* Main.storyboard */; };
 		2011CC061DEDF9720047F8B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2011CC051DEDF9720047F8B5 /* Assets.xcassets */; };
 		2011CC091DEDF9720047F8B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2011CC071DEDF9720047F8B5 /* LaunchScreen.storyboard */; };
-		2011CC141DEDF9720047F8B5 /* FontDiskLoaderExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2011CC131DEDF9720047F8B5 /* FontDiskLoaderExampleTests.m */; };
 		20BB4D2A1DEDFA4A00838A41 /* FontDiskLoaderSimipleExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB4D291DEDFA4A00838A41 /* FontDiskLoaderSimipleExample.m */; };
 		20BB4D2C1DEDFB4B00838A41 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20BB4D2B1DEDFB4B00838A41 /* CustomFont.bundle */; };
+		20BB4D2F1DEDFE1700838A41 /* FontDiskLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB4D2D1DEDFDB600838A41 /* FontDiskLoaderTests.m */; };
+		5BDF4D20BDF79B78B137C77D /* Pods_FontDiskLoaderExample_FontDiskLoaderExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F6DC37B3A8C5FA7F341D05 /* Pods_FontDiskLoaderExample_FontDiskLoaderExampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +40,15 @@
 		2011CC081DEDF9720047F8B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2011CC0A1DEDF9720047F8B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2011CC0F1DEDF9720047F8B5 /* FontDiskLoaderExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontDiskLoaderExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2011CC131DEDF9720047F8B5 /* FontDiskLoaderExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontDiskLoaderExampleTests.m; sourceTree = "<group>"; };
 		2011CC151DEDF9720047F8B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20BB4D291DEDFA4A00838A41 /* FontDiskLoaderSimipleExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FontDiskLoaderSimipleExample.m; path = ../../../FontDiskLoaderSimipleExample.m; sourceTree = "<group>"; };
 		20BB4D2B1DEDFB4B00838A41 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../../../supplemental/CustomFont.bundle; sourceTree = "<group>"; };
+		20BB4D2D1DEDFDB600838A41 /* FontDiskLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FontDiskLoaderTests.m; path = ../../../../tests/unit/FontDiskLoaderTests.m; sourceTree = "<group>"; };
+		67F6DC37B3A8C5FA7F341D05 /* Pods_FontDiskLoaderExample_FontDiskLoaderExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FontDiskLoaderExample_FontDiskLoaderExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E74C55B0E8B83357E8EDFD /* Pods-FontDiskLoaderExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontDiskLoaderExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-FontDiskLoaderExample/Pods-FontDiskLoaderExample.release.xcconfig"; sourceTree = "<group>"; };
+		8EB3B1E70CED076EAE587D88 /* Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests/Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		E9309652CB2B534DF5441F33 /* Pods_FontDiskLoaderExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FontDiskLoaderExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32FDFBA180521C3CF926509 /* Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests/Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDF4D20BDF79B78B137C77D /* Pods_FontDiskLoaderExample_FontDiskLoaderExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +118,7 @@
 		2011CC121DEDF9720047F8B5 /* FontDiskLoaderExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				2011CC131DEDF9720047F8B5 /* FontDiskLoaderExampleTests.m */,
+				20BB4D2D1DEDFDB600838A41 /* FontDiskLoaderTests.m */,
 				2011CC151DEDF9720047F8B5 /* Info.plist */,
 			);
 			path = FontDiskLoaderExampleTests;
@@ -124,6 +129,8 @@
 			children = (
 				1DFCA02F9B84CF6D04124AAD /* Pods-FontDiskLoaderExample.debug.xcconfig */,
 				73E74C55B0E8B83357E8EDFD /* Pods-FontDiskLoaderExample.release.xcconfig */,
+				F32FDFBA180521C3CF926509 /* Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.debug.xcconfig */,
+				8EB3B1E70CED076EAE587D88 /* Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				E9309652CB2B534DF5441F33 /* Pods_FontDiskLoaderExample.framework */,
+				67F6DC37B3A8C5FA7F341D05 /* Pods_FontDiskLoaderExample_FontDiskLoaderExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2011CC1B1DEDF9720047F8B5 /* Build configuration list for PBXNativeTarget "FontDiskLoaderExampleTests" */;
 			buildPhases = (
+				B870E463D9CAD4F4A2A85F05 /* [CP] Check Pods Manifest.lock */,
 				2011CC0B1DEDF9720047F8B5 /* Sources */,
 				2011CC0C1DEDF9720047F8B5 /* Frameworks */,
 				2011CC0D1DEDF9720047F8B5 /* Resources */,
+				F06C165F57865485F813B9D0 /* [CP] Embed Pods Frameworks */,
+				8D6EFEE7498F18AA62BC18C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +279,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		8D6EFEE7498F18AA62BC18C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests/Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B870E463D9CAD4F4A2A85F05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		EFAB62067C68872FA7AD2BA6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +322,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FontDiskLoaderExample/Pods-FontDiskLoaderExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F06C165F57865485F813B9D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests/Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -300,7 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2011CC141DEDF9720047F8B5 /* FontDiskLoaderExampleTests.m in Sources */,
+				20BB4D2F1DEDFE1700838A41 /* FontDiskLoaderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +506,7 @@
 		};
 		2011CC1C1DEDF9720047F8B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F32FDFBA180521C3CF926509 /* Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = FontDiskLoaderExampleTests/Info.plist;
@@ -462,6 +519,7 @@
 		};
 		2011CC1D1DEDF9720047F8B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EB3B1E70CED076EAE587D88 /* Pods-FontDiskLoaderExample-FontDiskLoaderExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = FontDiskLoaderExampleTests/Info.plist;

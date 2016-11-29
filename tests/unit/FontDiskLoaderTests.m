@@ -16,15 +16,16 @@
 
 #import <XCTest/XCTest.h>
 
-#import "MDFFontDiskLoader.h"
+#import "MaterialFontDiskLoader.h"
 
 static const CGFloat kEpsilonAccuracy = 0.001f;
 
 // We use the bundle from MDFRobotoFontLoader to test loading functionality
-static NSString *MDFRobotoFontLoaderClassname = @"MDFRobotoFontLoader";
+static NSString *MDFRobotoFontLoaderClassname = @"FontDiskLoaderSimpleExample";
 static NSString *MDFRobotoRegularFontName = @"Roboto-Regular";
 static NSString *MDFRobotoRegularFontFilename = @"Roboto-Regular.ttf";
-static NSString *MDFRobotoBundle = @"MaterialRobotoFontLoader.bundle";
+static NSString *MDFRobotoBundle = @"CustomFont.bundle";
+static NSString *kBlackPixel = @"BlackPixel.png";
 
 /**
  For our tests we are following a Given When Then structure as defined in
@@ -61,8 +62,8 @@ static NSString *MDFRobotoBundle = @"MaterialRobotoFontLoader.bundle";
   NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(MDFRobotoFontLoaderClassname)];
   // This attempts to use a png asset instead of a valid font file.
   return [[MDFFontDiskLoader alloc] initWithFontName:@"some invalid font name"
-                                            filename:@"ic_arrow_back.png"
-                                      bundleFileName:@"MaterialIcons_ic_arrow_back.bundle"
+                                            filename:kBlackPixel
+                                      bundleFileName:MDFRobotoBundle
                                           baseBundle:bundle];
 }
 
