@@ -52,7 +52,7 @@ Before using Font Disk Loader, you'll need to import it:
 
 #### Swift
 ~~~ swift
-import MaterialComponents
+import MDFFontDiskLoader
 ~~~
 <!--</div>-->
 
