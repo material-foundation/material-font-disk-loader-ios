@@ -13,7 +13,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-import CatalogByConvention
+//import CatalogByConvention
 import UIKit
 
 @UIApplicationMain
@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let window = UIWindow(frame: UIScreen.main.bounds)
     self.window = window
 
-    let rootViewController = CBCNodeListViewController(node: CBCCreateNavigationTree())
+    let rootViewController = UIViewController() //CBCNodeListViewController(node: CBCCreateNavigationTree())
     window.rootViewController = UINavigationController(rootViewController: rootViewController)
     window.makeKeyAndVisible()
     return true
