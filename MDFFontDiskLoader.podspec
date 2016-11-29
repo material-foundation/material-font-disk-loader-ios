@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "MaterialComponentsFontDiskLoader"
+  s.name         = "MDFFontDiskLoader"
   s.summary      = "MDFFontDiskLoader"
   s.version      = "1.0.0"
   s.authors      = "The Material Components Authors"

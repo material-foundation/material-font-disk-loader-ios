@@ -1,16 +1,16 @@
 PODS:
-  - MaterialComponentsFontDiskLoader (1.0.0)
+  - MDFFontDiskLoader (1.0.0)
 
 DEPENDENCIES:
-  - MaterialComponentsFontDiskLoader (from `../../../`)
+  - MDFFontDiskLoader (from `../../../`)
 
 EXTERNAL SOURCES:
-  MaterialComponentsFontDiskLoader:
+  MDFFontDiskLoader:
     :path: "../../../"
 
 SPEC CHECKSUMS:
-  MaterialComponentsFontDiskLoader: a5502890fe75ef8b640aecaa138e98aadfba0476
+  MDFFontDiskLoader: 26b2e308ee553701cdfc771cfcca7d4b99cbde29
 
-PODFILE CHECKSUM: a2ff8c78b1fd23f1240d09ee7ff66d6f7fc3c80a
+PODFILE CHECKSUM: d151bb618a72a3f57d567b24969f1f0b18ad5864
 
 COCOAPODS: 1.0.1

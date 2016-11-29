@@ -1,7 +1,7 @@
 use_frameworks!
 
 target "FontDiskLoaderExample" do
-  pod 'MaterialComponentsFontDiskLoader', :path => '../../../'
+  pod 'MDFFontDiskLoader', :path => '../../../'
   target 'FontDiskLoaderExampleTests' do
   end
 end
